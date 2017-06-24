@@ -1,0 +1,3 @@
+print \
+'i'
+print 'i'
