@@ -16,9 +16,3 @@ while True:
 	break
     print line,	#Notice comma to avoid automatic nreline added by python
 f.close() #close the file
-
-
-:<<!
-
-!
-
