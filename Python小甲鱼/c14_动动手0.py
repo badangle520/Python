@@ -1,24 +1,45 @@
-while True:
-    type_psw = input('please choose the type of password you want to create: ')
+nums = '0123456789'
+chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+symbols = r'''`!@#$%^&*()_+-=/*{}[]\|'";:/?,.<>'''
 
-    if type_psw != 'simple' or 'medium' or 'strong'
-        print('invalid password type..')
-        continue
+password = input('pls create password: ')
+length = len(password)
+flag_cnt = 0
+
+while (length == 0) or (password.isspace == True):
+    print('your enter password is empty or space, pls enter again: ')
+
+if length <=8:
+    flag_len = 1
+elif 8 < length < 16:
+    flag_len = 2
+else:
+    flag_len = 3
+
+for each in password:
+    if each in symbols:
+        flag_cnt += 1
+        break
+
+for each in password:
+    if each in chars:
+        flag_cnt += 1
+        break
+
+for each in password:
+    if each in nums:
+        flag_cnt += 1
+        break
+
+while 1:
+    print('your password security level: ')
+
+    if flag_len == 1 or flag_con == 1:
+        print('low')
+        break
+    if flag_len == 2 or flag_con == 2:
+        print('mediume')
+        break
     else:
-        while True:
-            psw = input('please create your password: ')
-            if psw.isdigit() == True:
-                print('password only number, pls add num & str')
-                continue
-            if psw.isalpha() == True:
-                print('password only str, pls use num & str')
-                continue
-            if psw.isalnum() == True:
-                    if len(psw) > 8:
-                        print('invalid length for psw, should <= 8')
-                        continue
-                    else:
-                        print('your password created successfully')
-                        break
-            else:
-                print('password can only include num & str')
+        print('high')
+        break
